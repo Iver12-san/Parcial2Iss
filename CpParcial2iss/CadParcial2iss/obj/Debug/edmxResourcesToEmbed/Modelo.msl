@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Parcial2IssModelStoreContainer" CdmEntityContainer="Parcial2IssEntities">
+    <EntitySetMapping Name="Canal">
+      <EntityTypeMapping TypeName="Parcial2IssModel.Canal">
+        <MappingFragment StoreEntitySet="Canal">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programa">
+      <EntityTypeMapping TypeName="Parcial2IssModel.Programa">
+        <MappingFragment StoreEntitySet="Programa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCanal" ColumnName="idCanal" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="productor" ColumnName="productor" />
+          <ScalarProperty Name="fechaEstreno" ColumnName="fechaEstreno" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="paCanalActualizar" FunctionName="Parcial2IssModel.Store.paCanalActualizar" />
+    <FunctionImportMapping FunctionImportName="paCanalCrear" FunctionName="Parcial2IssModel.Store.paCanalCrear" />
+    <FunctionImportMapping FunctionImportName="paCanalEliminarLogico" FunctionName="Parcial2IssModel.Store.paCanalEliminarLogico" />
+    <FunctionImportMapping FunctionImportName="paCanalLeer" FunctionName="Parcial2IssModel.Store.paCanalLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Parcial2IssModel.paCanalLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="paProgramaActualizar" FunctionName="Parcial2IssModel.Store.paProgramaActualizar" />
+    <FunctionImportMapping FunctionImportName="paProgramaCrear" FunctionName="Parcial2IssModel.Store.paProgramaCrear" />
+    <FunctionImportMapping FunctionImportName="paProgramaEliminarLogico" FunctionName="Parcial2IssModel.Store.paProgramaEliminarLogico" />
+    <FunctionImportMapping FunctionImportName="paProgramaLeer" FunctionName="Parcial2IssModel.Store.paProgramaLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Parcial2IssModel.paProgramaLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCanal" ColumnName="idCanal" />
+          <ScalarProperty Name="nombreCanal" ColumnName="nombreCanal" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="productor" ColumnName="productor" />
+          <ScalarProperty Name="fechaEstreno" ColumnName="fechaEstreno" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

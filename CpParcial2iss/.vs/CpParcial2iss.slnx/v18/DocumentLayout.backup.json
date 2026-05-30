@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Informatica\\2026_1\\sis457_Fundamentos_Programacion\\Parcial2Iss\\CpParcial2iss\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{318D9E55-7E20-4FCF-A27D-8C9AF8B98242}|CpParcial2iss\\CpParcial2iss.csproj|e:\\informatica\\2026_1\\sis457_fundamentos_programacion\\parcial2iss\\cpparcial2iss\\cpparcial2iss\\frmcanal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{318D9E55-7E20-4FCF-A27D-8C9AF8B98242}|CpParcial2iss\\CpParcial2iss.csproj|solutionrelative:cpparcial2iss\\frmcanal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5D4CC55-C276-47A4-A87E-FCFDC6D0FCDF}|ClnParcial2iss\\ClnParcial2iss.csproj|e:\\informatica\\2026_1\\sis457_fundamentos_programacion\\parcial2iss\\cpparcial2iss\\clnparcial2iss\\canalcln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5D4CC55-C276-47A4-A87E-FCFDC6D0FCDF}|ClnParcial2iss\\ClnParcial2iss.csproj|solutionrelative:clnparcial2iss\\canalcln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{318D9E55-7E20-4FCF-A27D-8C9AF8B98242}|CpParcial2iss\\CpParcial2iss.csproj|e:\\informatica\\2026_1\\sis457_fundamentos_programacion\\parcial2iss\\cpparcial2iss\\cpparcial2iss\\frmcanal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{318D9E55-7E20-4FCF-A27D-8C9AF8B98242}|CpParcial2iss\\CpParcial2iss.csproj|solutionrelative:cpparcial2iss\\frmcanal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmCanal.cs",
+              "DocumentMoniker": "E:\\Informatica\\2026_1\\sis457_Fundamentos_Programacion\\Parcial2Iss\\CpParcial2iss\\CpParcial2iss\\FrmCanal.cs",
+              "RelativeDocumentMoniker": "CpParcial2iss\\FrmCanal.cs",
+              "ToolTip": "E:\\Informatica\\2026_1\\sis457_Fundamentos_Programacion\\Parcial2Iss\\CpParcial2iss\\CpParcial2iss\\FrmCanal.cs",
+              "RelativeToolTip": "CpParcial2iss\\FrmCanal.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T03:56:47.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmCanal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\Informatica\\2026_1\\sis457_Fundamentos_Programacion\\Parcial2Iss\\CpParcial2iss\\CpParcial2iss\\FrmCanal.cs",
+              "RelativeDocumentMoniker": "CpParcial2iss\\FrmCanal.cs",
+              "ToolTip": "E:\\Informatica\\2026_1\\sis457_Fundamentos_Programacion\\Parcial2Iss\\CpParcial2iss\\CpParcial2iss\\FrmCanal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CpParcial2iss\\FrmCanal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T03:53:12.709Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CanalCln.cs",
+              "DocumentMoniker": "E:\\Informatica\\2026_1\\sis457_Fundamentos_Programacion\\Parcial2Iss\\CpParcial2iss\\ClnParcial2iss\\CanalCln.cs",
+              "RelativeDocumentMoniker": "ClnParcial2iss\\CanalCln.cs",
+              "ToolTip": "E:\\Informatica\\2026_1\\sis457_Fundamentos_Programacion\\Parcial2Iss\\CpParcial2iss\\ClnParcial2iss\\CanalCln.cs",
+              "RelativeToolTip": "ClnParcial2iss\\CanalCln.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwEcAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T03:38:56.917Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

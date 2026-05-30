@@ -1,0 +1,12 @@
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\bin\Debug\CadParcial2iss.dll.config
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\bin\Debug\CadParcial2iss.dll
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\bin\Debug\CadParcial2iss.pdb
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\bin\Debug\EntityFramework.dll
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\bin\Debug\EntityFramework.SqlServer.dll
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\bin\Debug\EntityFramework.xml
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\bin\Debug\EntityFramework.SqlServer.xml
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\obj\Debug\CadParcial2iss.csproj.AssemblyReference.cache
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\obj\Debug\CadParcial2iss.csproj.CoreCompileInputs.cache
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\obj\Debug\CadParci.258207E5.Up2Date
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\obj\Debug\CadParcial2iss.dll
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CadParcial2iss\obj\Debug\CadParcial2iss.pdb
