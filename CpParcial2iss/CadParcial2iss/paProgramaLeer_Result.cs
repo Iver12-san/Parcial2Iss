@@ -22,5 +22,8 @@ namespace CadParcial2iss
         public string productor { get; set; }
         public System.DateTime fechaEstreno { get; set; }
         public short estado { get; set; }
+        public System.DateTime fechaRegistro { get; set; }
+        public int idProgramaControl { get; set; }
+        public string nombreProgramaControl { get; set; }
     }
 }

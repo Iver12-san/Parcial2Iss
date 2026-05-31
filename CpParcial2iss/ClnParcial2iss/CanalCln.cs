@@ -29,6 +29,7 @@ namespace ClnParcial2iss
                     existente.nombre = canal.nombre;
                     existente.frecuencia = canal.frecuencia;
                     existente.usuarioRegistro = canal.usuarioRegistro;
+                    existente.fechaRegistro = DateTime.Now;
                     return context.SaveChanges();
                 }
                 return 0;

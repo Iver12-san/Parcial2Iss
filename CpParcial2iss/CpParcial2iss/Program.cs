@@ -16,7 +16,7 @@ namespace CpParcial2iss
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCanal());
+            Application.Run(new FrmPrincipal());
         }
     }
 }

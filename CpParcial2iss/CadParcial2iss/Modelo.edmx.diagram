@@ -4,10 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f862ac1e98c545f4952e4e843283faeb" Name="Diagram1">
-        <EntityTypeShape EntityType="Parcial2IssModel.Canal" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Parcial2IssModel.Programa" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="Parcial2IssModel.fk_Programa_Canal" ManuallyRouted="false" />
+      <Diagram DiagramId="f862ac1e98c545f4952e4e843283faeb" Name="Diagram1" ZoomLevel="69">
+        <EntityTypeShape EntityType="Parcial2IssModel.Canal" Width="1.5" PointX="0.75" PointY="5.625" />
+        <EntityTypeShape EntityType="Parcial2IssModel.Programa" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="Parcial2IssModel.ProgramaControl" Width="1.5" PointX="0.75" PointY="1.875" />
+        <AssociationConnector Association="Parcial2IssModel.fk_Programa_Canal" />
+        <AssociationConnector Association="Parcial2IssModel.fk_Programa_ProgramaControl" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

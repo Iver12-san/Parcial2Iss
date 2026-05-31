@@ -16,15 +16,17 @@ namespace CadParcial2iss
     {
         public int id { get; set; }
         public int idCanal { get; set; }
+        public int idProgramaControl { get; set; }
         public string titulo { get; set; }
         public string descripcion { get; set; }
         public int duracion { get; set; }
         public string productor { get; set; }
         public System.DateTime fechaEstreno { get; set; }
-        public short estado { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
+        public short estado { get; set; }
     
         public virtual Canal Canal { get; set; }
+        public virtual ProgramaControl ProgramaControl { get; set; }
     }
 }

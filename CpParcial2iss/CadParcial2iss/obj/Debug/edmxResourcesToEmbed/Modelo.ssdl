@@ -17,14 +17,23 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idCanal" Type="int" Nullable="false" />
+    <Property Name="idProgramaControl" Type="int" Nullable="false" />
     <Property Name="titulo" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="descripcion" Type="varchar" MaxLength="250" />
     <Property Name="duracion" Type="int" Nullable="false" />
     <Property Name="productor" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="fechaEstreno" Type="date" Nullable="false" />
-    <Property Name="estado" Type="smallint" Nullable="false" />
     <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="estado" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProgramaControl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estado" Type="smallint" Nullable="false" />
   </EntityType>
   <Association Name="fk_Programa_Canal">
     <End Role="Canal" Type="Self.Canal" Multiplicity="1" />
@@ -35,6 +44,18 @@
       </Principal>
       <Dependent Role="Programa">
         <PropertyRef Name="idCanal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Programa_ProgramaControl">
+    <End Role="ProgramaControl" Type="Self.ProgramaControl" Multiplicity="1" />
+    <End Role="Programa" Type="Self.Programa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgramaControl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Programa">
+        <PropertyRef Name="idProgramaControl" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -79,8 +100,13 @@
   <EntityContainer Name="Parcial2IssModelStoreContainer">
     <EntitySet Name="Canal" EntityType="Self.Canal" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Programa" EntityType="Self.Programa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramaControl" EntityType="Self.ProgramaControl" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_Programa_Canal" Association="Self.fk_Programa_Canal">
       <End Role="Canal" EntitySet="Canal" />
+      <End Role="Programa" EntitySet="Programa" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Programa_ProgramaControl" Association="Self.fk_Programa_ProgramaControl">
+      <End Role="ProgramaControl" EntitySet="ProgramaControl" />
       <End Role="Programa" EntitySet="Programa" />
     </AssociationSet>
   </EntityContainer>

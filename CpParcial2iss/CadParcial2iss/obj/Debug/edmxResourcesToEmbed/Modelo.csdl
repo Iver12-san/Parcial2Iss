@@ -1,52 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Parcial2IssModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Canal">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="frecuencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="estado" Type="Int16" Nullable="false" />
-    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Programa" Relationship="Self.fk_Programa_Canal" FromRole="Canal" ToRole="Programa" />
-  </EntityType>
-  <EntityType Name="Programa">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idCanal" Type="Int32" Nullable="false" />
-    <Property Name="titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Name="duracion" Type="Int32" Nullable="false" />
-    <Property Name="productor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="fechaEstreno" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="estado" Type="Int16" Nullable="false" />
-    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Canal" Relationship="Self.fk_Programa_Canal" FromRole="Programa" ToRole="Canal" />
-  </EntityType>
-  <Association Name="fk_Programa_Canal">
-    <End Role="Canal" Type="Self.Canal" Multiplicity="1" />
-    <End Role="Programa" Type="Self.Programa" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Canal">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Programa">
-        <PropertyRef Name="idCanal" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="Parcial2IssEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Canal" EntityType="Self.Canal" />
-    <EntitySet Name="Programa" EntityType="Self.Programa" />
-    <AssociationSet Name="fk_Programa_Canal" Association="Self.fk_Programa_Canal">
-      <End Role="Canal" EntitySet="Canal" />
-      <End Role="Programa" EntitySet="Programa" />
-    </AssociationSet>
     <FunctionImport Name="paCanalActualizar">
       <Parameter Name="id" Mode="In" Type="Int32" />
       <Parameter Name="nombre" Mode="In" Type="String" />
@@ -85,12 +39,25 @@
     <FunctionImport Name="paProgramaLeer" ReturnType="Collection(Parcial2IssModel.paProgramaLeer_Result)">
       <Parameter Name="parametro" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="Canal" EntityType="Parcial2IssModel.Canal" />
+    <EntitySet Name="Programa" EntityType="Parcial2IssModel.Programa" />
+    <EntitySet Name="ProgramaControl" EntityType="Parcial2IssModel.ProgramaControl" />
+    <AssociationSet Name="fk_Programa_Canal" Association="Parcial2IssModel.fk_Programa_Canal">
+      <End Role="Canal" EntitySet="Canal" />
+      <End Role="Programa" EntitySet="Programa" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Programa_ProgramaControl" Association="Parcial2IssModel.fk_Programa_ProgramaControl">
+      <End Role="ProgramaControl" EntitySet="ProgramaControl" />
+      <End Role="Programa" EntitySet="Programa" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="paCanalLeer_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="frecuencia" Nullable="false" MaxLength="20" />
     <Property Type="Int16" Name="estado" Nullable="false" />
+    <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
   </ComplexType>
   <ComplexType Name="paProgramaLeer_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
@@ -102,5 +69,71 @@
     <Property Type="String" Name="productor" Nullable="false" MaxLength="100" />
     <Property Type="DateTime" Name="fechaEstreno" Nullable="false" />
     <Property Type="Int16" Name="estado" Nullable="false" />
+    <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="idProgramaControl" Nullable="false" />
+    <Property Type="String" Name="nombreProgramaControl" Nullable="false" MaxLength="50" />
   </ComplexType>
+  <EntityType Name="Canal">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="frecuencia" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Int16" Nullable="false" />
+    <Property Name="usuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Programa" Relationship="Parcial2IssModel.fk_Programa_Canal" FromRole="Canal" ToRole="Programa" />
+  </EntityType>
+  <EntityType Name="Programa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCanal" Type="Int32" Nullable="false" />
+    <Property Name="idProgramaControl" Type="Int32" Nullable="false" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="duracion" Type="Int32" Nullable="false" />
+    <Property Name="productor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fechaEstreno" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="usuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="estado" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Canal" Relationship="Parcial2IssModel.fk_Programa_Canal" FromRole="Programa" ToRole="Canal" />
+    <NavigationProperty Name="ProgramaControl" Relationship="Parcial2IssModel.fk_Programa_ProgramaControl" FromRole="Programa" ToRole="ProgramaControl" />
+  </EntityType>
+  <EntityType Name="ProgramaControl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Programa" Relationship="Parcial2IssModel.fk_Programa_ProgramaControl" FromRole="ProgramaControl" ToRole="Programa" />
+  </EntityType>
+  <Association Name="fk_Programa_Canal">
+    <End Type="Parcial2IssModel.Canal" Role="Canal" Multiplicity="1" />
+    <End Type="Parcial2IssModel.Programa" Role="Programa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Programa">
+        <PropertyRef Name="idCanal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Programa_ProgramaControl">
+    <End Type="Parcial2IssModel.ProgramaControl" Role="ProgramaControl" Multiplicity="1" />
+    <End Type="Parcial2IssModel.Programa" Role="Programa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgramaControl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Programa">
+        <PropertyRef Name="idProgramaControl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

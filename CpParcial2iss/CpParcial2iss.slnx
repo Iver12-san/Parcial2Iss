@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="CadParcial2iss/CadParcial2iss.csproj" />
-  <Project Path="ClnParcial2iss/ClnParcial2iss.csproj" />
-  <Project Path="CpParcial2iss/CpParcial2iss.csproj" />
+  <Project Path="CadParcial2iss/CadParcial2iss.csproj" Id="6ced7c7e-efaa-4893-ab11-217d062269c5" />
+  <Project Path="ClnParcial2iss/ClnParcial2iss.csproj" Id="f5d4cc55-c276-47a4-a87e-fcfdc6d0fcdf" />
+  <Project Path="CpParcial2iss/CpParcial2iss.csproj" Id="318d9e55-7e20-4fcf-a27d-8c9af8b98242" />
 </Solution>

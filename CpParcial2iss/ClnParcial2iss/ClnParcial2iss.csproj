@@ -55,7 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CanalCln.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="ProgramaCln.cs" />
+    <Compile Include="ProgramaControlCln.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

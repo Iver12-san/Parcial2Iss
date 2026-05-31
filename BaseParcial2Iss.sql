@@ -17,25 +17,42 @@ GO
 -----------
 DROP TABLE IF EXISTS Canal;
 DROP TABLE IF EXISTS Programa;
+DROP TABLE IF EXISTS ProgramaControl;
 
 ---Creamos las tablas--
 CREATE TABLE Canal (
     id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     nombre VARCHAR(50) NOT NULL,
     frecuencia VARCHAR(20) NOT NULL,
+    usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+    fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
     estado SMALLINT NOT NULL DEFAULT 1 
 );
+CREATE TABLE ProgramaControl (
+    id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    nombre VARCHAR(50) NOT NULL,
+    estado SMALLINT NOT NULL DEFAULT 1
+);
+
 CREATE TABLE Programa (
-    id INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     idCanal INT NOT NULL,
+    idProgramaControl INT NOT NULL,
     titulo VARCHAR(100) NOT NULL,
     descripcion VARCHAR(250) NULL,
     duracion INT NOT NULL,
     productor VARCHAR(100) NOT NULL,
     fechaEstreno DATE NOT NULL,
-    estado SMALLINT NOT NULL DEFAULT 1, 
-    CONSTRAINT fk_Programa_Canal FOREIGN KEY (idCanal) REFERENCES Canal(id)
+    usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+    fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+    estado SMALLINT NOT NULL DEFAULT 1,
+
+    CONSTRAINT fk_Programa_Canal FOREIGN KEY (idCanal) REFERENCES Canal(id),
+
+    CONSTRAINT fk_Programa_ProgramaControl FOREIGN KEY (idProgramaControl) REFERENCES ProgramaControl(id)
 );
+
+
 
 ------Para la autoria---
 ALTER TABLE Canal ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
@@ -44,6 +61,8 @@ ALTER TABLE Canal ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
 ALTER TABLE Programa ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
 ALTER TABLE Programa ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
 
+
+
 ----Procedimientos de Crear, Leer, Actualizar y Eliminar de forma lógica para Canal---
 -- LISTAR
 DROP PROC IF EXISTS paCanalLeer;
@@ -51,7 +70,7 @@ GO
 CREATE PROC paCanalLeer @parametro VARCHAR(50)
 AS
 BEGIN
-    SELECT id, nombre, frecuencia, estado
+    SELECT id, nombre, frecuencia, estado, usuarioRegistro, fechaRegistro
     FROM Canal
     WHERE estado = 1 AND nombre + frecuencia LIKE '%' + REPLACE(@parametro, ' ', '%') + '%'
     ORDER BY nombre;
@@ -93,9 +112,10 @@ GO
 CREATE PROC paProgramaLeer @parametro VARCHAR(100)
 AS
 BEGIN
-    SELECT p.id, p.idCanal, c.nombre AS nombreCanal, p.titulo, p.descripcion, p.duracion, p.productor, p.fechaEstreno, p.estado
+    SELECT p.id, p.idCanal, c.nombre AS nombreCanal, p.titulo, p.descripcion, p.duracion, p.productor, p.fechaEstreno, p.estado,
+    p.fechaRegistro,p.idProgramaControl,pc.nombre AS nombreProgramaControl
     FROM Programa p
-    INNER JOIN Canal c ON c.id = p.idCanal
+    INNER JOIN Canal c ON c.id = p.idCanal INNER JOIN ProgramaControl pc ON pc.id = p.idProgramaControl
     WHERE p.estado = 1 AND p.titulo + c.nombre + p.productor LIKE '%' + REPLACE(@parametro, ' ', '%') + '%'
     ORDER BY p.titulo;
 END
@@ -103,21 +123,21 @@ GO
 
 DROP PROC IF EXISTS paProgramaCrear;
 GO
-CREATE PROC paProgramaCrear @idCanal INT, @titulo VARCHAR(100), @descripcion VARCHAR(250), @duracion INT, @productor VARCHAR(100), @fechaEstreno DATE
+CREATE PROC paProgramaCrear @idCanal INT,@idProgramaControl INT, @titulo VARCHAR(100), @descripcion VARCHAR(250), @duracion INT, @productor VARCHAR(100), @fechaEstreno DATE
 AS
 BEGIN
-    INSERT INTO Programa (idCanal, titulo, descripcion, duracion, productor, fechaEstreno, estado)
-    VALUES (@idCanal, @titulo, @descripcion, @duracion, @productor, @fechaEstreno, 1);
+    INSERT INTO Programa (idCanal, idProgramaControl, titulo, descripcion, duracion, productor, fechaEstreno, estado)
+    VALUES (@idCanal, @idProgramaControl, @titulo, @descripcion, @duracion, @productor, @fechaEstreno, 1);
     SELECT SCOPE_IDENTITY();
 END
 GO
 
 DROP PROC IF EXISTS paProgramaActualizar;
 GO
-CREATE PROC paProgramaActualizar @id INT, @idCanal INT, @titulo VARCHAR(100), @descripcion VARCHAR(250), @duracion INT, @productor VARCHAR(100), @fechaEstreno DATE
+CREATE PROC paProgramaActualizar @id INT, @idCanal INT, @idProgramaControl INT, @titulo VARCHAR(100), @descripcion VARCHAR(250), @duracion INT, @productor VARCHAR(100), @fechaEstreno DATE
 AS
 BEGIN
-    UPDATE Programa SET idCanal = @idCanal, titulo = @titulo, descripcion = @descripcion, duracion = @duracion, productor = @productor, fechaEstreno = @fechaEstreno
+    UPDATE Programa SET idCanal = @idCanal, idProgramaControl = @idProgramaControl, titulo = @titulo, descripcion = @descripcion, duracion = @duracion, productor = @productor, fechaEstreno = @fechaEstreno
     WHERE id = @id;
 END
 GO
@@ -134,6 +154,9 @@ GO
 INSERT INTO Canal (nombre, frecuencia) VALUES
 ( 'Red Uno', 'VHF-Canal 11'),
 ('Unitel','UHF-Canal 32');
+INSERT INTO ProgramaControl(nombre)
+VALUES ('Prueva1'), ('Prueva2'), ('Prueva3'), ('Prueva4');
 ---vemos los datos--
-SELECT * FROM Canal;
-SELECT * FROM Canal WHERE nombre LIKE 'Red Uno';
+SELECT * FROM Programa;
+SELECT * FROM Programa WHERE nombre LIKE 'Red Uno';
+EXEC paProgramaLeer 'papel carta';

@@ -1,34 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Parcial2IssModelStoreContainer" CdmEntityContainer="Parcial2IssEntities">
-    <EntitySetMapping Name="Canal">
-      <EntityTypeMapping TypeName="Parcial2IssModel.Canal">
-        <MappingFragment StoreEntitySet="Canal">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
-          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Programa">
-      <EntityTypeMapping TypeName="Parcial2IssModel.Programa">
-        <MappingFragment StoreEntitySet="Programa">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="idCanal" ColumnName="idCanal" />
-          <ScalarProperty Name="titulo" ColumnName="titulo" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="duracion" ColumnName="duracion" />
-          <ScalarProperty Name="productor" ColumnName="productor" />
-          <ScalarProperty Name="fechaEstreno" ColumnName="fechaEstreno" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
-          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="paCanalActualizar" FunctionName="Parcial2IssModel.Store.paCanalActualizar" />
     <FunctionImportMapping FunctionImportName="paCanalCrear" FunctionName="Parcial2IssModel.Store.paCanalCrear" />
     <FunctionImportMapping FunctionImportName="paCanalEliminarLogico" FunctionName="Parcial2IssModel.Store.paCanalEliminarLogico" />
@@ -39,6 +11,8 @@
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
           <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -57,8 +31,49 @@
           <ScalarProperty Name="productor" ColumnName="productor" />
           <ScalarProperty Name="fechaEstreno" ColumnName="fechaEstreno" />
           <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="idProgramaControl" ColumnName="idProgramaControl" />
+          <ScalarProperty Name="nombreProgramaControl" ColumnName="nombreProgramaControl" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="Canal">
+      <EntityTypeMapping TypeName="Parcial2IssModel.Canal">
+        <MappingFragment StoreEntitySet="Canal">
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programa">
+      <EntityTypeMapping TypeName="Parcial2IssModel.Programa">
+        <MappingFragment StoreEntitySet="Programa">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaEstreno" ColumnName="fechaEstreno" />
+          <ScalarProperty Name="productor" ColumnName="productor" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="idProgramaControl" ColumnName="idProgramaControl" />
+          <ScalarProperty Name="idCanal" ColumnName="idCanal" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramaControl">
+      <EntityTypeMapping TypeName="Parcial2IssModel.ProgramaControl">
+        <MappingFragment StoreEntitySet="ProgramaControl">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

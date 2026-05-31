@@ -29,6 +29,7 @@ namespace CadParcial2iss
     
         public virtual DbSet<Canal> Canal { get; set; }
         public virtual DbSet<Programa> Programa { get; set; }
+        public virtual DbSet<ProgramaControl> ProgramaControl { get; set; }
     
         public virtual int paCanalActualizar(Nullable<int> id, string nombre, string frecuencia)
         {

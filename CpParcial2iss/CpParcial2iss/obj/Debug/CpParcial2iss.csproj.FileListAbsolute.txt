@@ -19,3 +19,5 @@ E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\
 E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CpParcial2iss\obj\Debug\CpParcia.7A4BCE1B.Up2Date
 E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CpParcial2iss\obj\Debug\CpParcial2iss.exe
 E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CpParcial2iss\obj\Debug\CpParcial2iss.pdb
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CpParcial2iss\obj\Debug\CpParcial2iss.FrmPrincipal.resources
+E:\Informatica\2026_1\sis457_Fundamentos_Programacion\Parcial2Iss\CpParcial2iss\CpParcial2iss\obj\Debug\CpParcial2iss.FrmPrograma.resources

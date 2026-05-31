@@ -17,5 +17,7 @@ namespace CadParcial2iss
         public string nombre { get; set; }
         public string frecuencia { get; set; }
         public short estado { get; set; }
+        public string usuarioRegistro { get; set; }
+        public System.DateTime fechaRegistro { get; set; }
     }
 }
